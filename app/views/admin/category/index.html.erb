@@ -1,5 +1,25 @@
+<section class="admin-category-index">
 
-<header class="page-header">
-  <h1>Admin &raquo; All Categories</h1>
-</header>
-<p>Find me in app/views/admin/category/index.html.erb</p>
+  <header class="page-header text-center">
+    <h1><%= tag.span 'Admin', class: "text-muted" %> &raquo; All Categories</h1>
+  </header>
+
+  <%# TODO: Look up class .products %>
+  <div class="d-flex flex-column align-items-center justify-content-center">
+    <%= tag.div class: "lead card-header text-center w-25 fs-3" do %>
+      <%= tag.strong 'CATEGORIES' %>
+    <% end %>
+    <%= tag.ul class: "list-group list-group-flush w-25" do %>
+        <% @category_list.each do |c| %>
+          <%= tag.li c, class: "list-group-item text-center fs-4" %>
+        <% end %>
+    <% end %>
+  
+    <%= tag.div class:"card mt-4" do %>
+      <%= link_to 'New Category', [:new, :admin, :category], class: 'btn btn-success fs-5' %>
+    <% end %>
+  
+  </div>
+
+
+</section>
