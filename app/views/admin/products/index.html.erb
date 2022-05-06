@@ -1,12 +1,11 @@
 <section class="admin-products-index">
 
-  <header class="page-header">
-    <h1>Admin &raquo; All Products</h1>
-  </header>
-
-  <div class="well">
-    <%= link_to '+ New Product', [:new, :admin, :product], class: 'btn btn-info' %>
-  </div>
+  <%= tag.header class: "page-header text-center" do %>
+    <%= tag.h1 do %>
+      <%= tag.span "Admin »", class: "text-muted" %> New Product
+    <% end %>
+    <%= tag.div link_to 'New Product', [:new, :admin, :product], class: "btn btn-success my-4 fs-5" %>  
+  <% end %>
 
   <div class="panel panel-default products">
 

@@ -1,10 +1,12 @@
 <section class="admin-category-index">
 
-  <header class="page-header text-center">
-    <h1><%= tag.span 'Admin', class: "text-muted" %> &raquo; All Categories</h1>
-  </header>
+  <%= tag.header class: "page-header text-center" do %>
+    <%= tag.h1 do %>
+      <%= tag.span "Admin »", class: "text-muted" %> All Categories
+    <% end %>
+    <%= tag.div link_to 'New Category', [:new, :admin, :category], class: 'btn btn-success mt-4 fs-5' %>
+  <% end %>
 
-  <%# TODO: Look up class .products %>
   <div class="d-flex flex-column align-items-center justify-content-center">
     <%= tag.div class: "lead card-header text-center w-25 fs-3" do %>
       <%= tag.strong 'CATEGORIES' %>
@@ -13,10 +15,6 @@
         <% @category_list.each do |c| %>
           <%= tag.li c, class: "list-group-item text-center fs-4" %>
         <% end %>
-    <% end %>
-  
-    <%= tag.div class:"card mt-4" do %>
-      <%= link_to 'New Category', [:new, :admin, :category], class: 'btn btn-success fs-5' %>
     <% end %>
   
   </div>
