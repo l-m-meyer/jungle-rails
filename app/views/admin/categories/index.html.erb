@@ -12,8 +12,8 @@
       <%= tag.strong 'CATEGORIES' %>
     <% end %>
     <%= tag.ul class: "list-group list-group-flush w-25" do %>
-        <% @category_list.each do |c| %>
-          <%= tag.li c, class: "list-group-item text-center fs-4" %>
+        <% @categories.each do |c| %>
+          <%= tag.li c.name, class: "list-group-item text-center fs-4" %>
         <% end %>
     <% end %>
   

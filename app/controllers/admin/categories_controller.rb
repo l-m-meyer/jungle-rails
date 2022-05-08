@@ -1,10 +1,9 @@
-class Admin::CategoryController < ApplicationController
+class Admin::CategoriesController < ApplicationController
 
   http_basic_authenticate_with name: ENV['USERNAME'], password: ENV['PASSWORD']
 
   def index
-    @categories = Category.all
-    @category_list = @categories.map(&:name)
+    @categories = Category.order(id: :desc).all
   end
 
   def new
@@ -15,7 +14,7 @@ class Admin::CategoryController < ApplicationController
     @category = Category.new(category_params)
 
     if @category.save
-      redirect_to [:admin, :category, :index], notice: 'Category saved!'
+      redirect_to [:admin, :categories], notice: 'Category saved!'
     else
       render :new
     end

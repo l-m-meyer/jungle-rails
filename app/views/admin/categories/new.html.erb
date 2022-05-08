@@ -7,7 +7,7 @@
       <%= tag.span "Admin »", class: "text-muted" %> New Category
     <% end %>
 
-    <%= tag.div link_to 'All Categories', [:admin, :category, :index], class: "btn btn-success my-4 fs-5" %>  
+    <%= tag.div link_to 'All Categories', [:admin, :categories], class: "btn btn-success my-4 fs-5" %>  
 
   <% end %>
 
@@ -15,6 +15,7 @@
   <div class="row">
     <div class="col-sm-6 col-sm-offset-1">
       <%= form_for [:admin, @category] do |form| %>
+
         <% if form.object.errors.any? %>
           <div class="alert alert-danger">
             <strong>The following errors prevented saving:</strong>
