@@ -24,7 +24,42 @@ RSpec.describe Product, type: :model do
         quantity: 11
       )
 
-      expect(name).to_not be_valid
+      expect(name).to_not be_valid, "Invalid: #{name.errors.full_messages}"
+    end
+
+    it 'should not save without a valid price' do
+      @category = Category.create(name: 'Fresh Air')
+      price = Product.new(
+        name: 'Spider Plant',
+        price_cents: nil,
+        category_id: @category.id,
+        quantity: 40
+      )
+
+      expect(price).to_not be_valid, "Invalid: #{price.errors.full_messages}"
+    end
+
+    it 'should not save without a valid quantity' do
+      @category = Category.create(name: 'Tools')
+      quantity = Product.new(
+        name: 'Spade',
+        price: 6.00,
+        category_id: @category.id,
+        quantity: nil
+      )
+
+      expect(quantity).to_not be_valid, "Invalid: #{quantity.errors.full_messages}"
+    end
+
+    it 'should not save without a valid category id' do
+      category = Product.new(
+        name: 'Redwood Tree',
+        price: 560.00,
+        category_id: nil,
+        quantity: 3
+      )
+
+      expect(category).to_not be_valid, "Invalid: #{category.errors.full_messages}"
     end
   end
 end
