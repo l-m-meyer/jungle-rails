@@ -29,6 +29,12 @@
           <% end %>
       </ul>
       <ul class="navbar-nav">
+        <% if current_user %>
+          <li class="d-inline nav-item nav-link text-white"> <%= fa_icon 'user'%> <%= current_user.name %> <span class= 'nav-item mt-1'>|</span><%= link_to 'Logout', '/logout', class: "d-inline nav-item nav-link text-white" %></li>
+        <% else %>
+          <%= link_to 'Login', '/login', class: "nav-item nav-link text-white" %> <span class= 'nav-item mt-1 text-white'>|</span> <%= link_to 'Signup', '/signup', class: "nav-item nav-link text-white" %>
+        <% end %>
+
         <%= link_to 'About Us', about_path, class: "nav-link" %>
         <li class="nav-item dropdown">
           <a
