@@ -1,6 +1,6 @@
 describe('Home Page', () => {
 
-  it("Goes to the homepage", () => {
+  beforeEach(() => {
     cy.visit('/');
   });
 
