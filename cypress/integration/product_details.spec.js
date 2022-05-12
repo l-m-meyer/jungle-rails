@@ -1,4 +1,4 @@
-describe('Home Page', () => {
+describe('Product Detail', () => {
 
   beforeEach(() => {
     cy.visit('/');
@@ -13,6 +13,7 @@ describe('Home Page', () => {
   });
 
   it("Navigates directly to a product detail page", () => {
-    cy.visit('products/2');
+    cy.get(':nth-child(1) > a > h1')
+      .click({ force: true });
   });
 })

@@ -1,9 +1,14 @@
 # Jungle
 
-A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 6.1, ActiveRecord, PostgreSQL, Bootstrap, ERB template engine, and uses the Stripe API.
 
 ## Setup
-
+### First Step
+```
+git clone https://github.com/l-m-meyer/jungle-rails
+cd jungle-rails
+```
+### Second Step
 1. Run `bundle install` to install dependencies
 2. Create `config/database.yml` by copying `config/database.example.yml`
 3. Create `config/secrets.yml` by copying `config/secrets.example.yml`
